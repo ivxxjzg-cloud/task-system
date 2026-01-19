@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>الإعدادات</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+<h2>الإعدادات</h2>
+
+<input id="n" placeholder="اسم جديد">
+<input id="p" placeholder="مكان جديد">
+
+<button onclick="save()">حفظ</button>
+<button onclick="back()">رجوع</button>
+</div>
+
+<script>
+let u=JSON.parse(localStorage.getItem("login"));
+
+function save(){
+u.name=n.value;
+u.place=p.value;
+localStorage.setItem("user",JSON.stringify(u));
+localStorage.setItem("login",JSON.stringify(u));
+alert("تم الحفظ");
+}
+
+function back(){
+location.href="dashboard.html";
+}
+</script>
+</body>
+</html>
